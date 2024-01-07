@@ -1,5 +1,5 @@
-#  MongoDB
-#  01 : Introducation
+# MongoDB Documentation
+### 01 : Introducation
 - Database - Collection of data in a structured way
 - SQL - Structured Query Language
 - RDBMS - Relational Database Management System
@@ -28,7 +28,7 @@
 
 
 
-# 02 : Installation
+###02 : Installation
 - There are 3 ways to install and use MongoDB
   - Community Server
   - Visual Studio Extension
@@ -52,7 +52,7 @@
 
 
 
-# 03 : Databases, Documents and Collections
+###03 : Databases, Documents and Collections
 - Database : Database is a collection of data
 - In MongoDB context :
   - Database can also be described as a physical container for collections
@@ -77,18 +77,18 @@
 
 
 
-# 04 : MongoDB Compass App
+###04 : MongoDB Compass App
 - Documents -> Collection -› Database
 
 
 
-# 05 : VS Code Extension
+###05 : VS Code Extension
 - Go to Extension in VS Code in search for MongoDB for VS Code and install it.
 - To start work with terminal in vs code enter ctrl+p and write ">" then select Launch Mongo Shell this will open MongoDB Shell inside that do CRUD operations. and exit that shell press ctrl+c two times.
 
 
 
-# 06 : Create and Drop Databases
+###06 : Create and Drop Databases
 - Creating and Dropping Databases
   - Creating Databases
 	- use <database-name>
@@ -99,7 +99,7 @@
 
 
 
-# 07 : Create and Drop Collections
+###07 : Create and Drop Collections
 - Creating Collections
   - db.createCollection(name, options)
 - Dropping Collections
@@ -107,7 +107,7 @@
 
 
 
-# 08 : Data Types in MongoDB
+###08 : Data Types in MongoDB
 - BSON
 - JSON
 - Integer
@@ -131,14 +131,11 @@ decode in diverse languages and ordered fields.
 
 
 
-# 09 : Insert Documents in Collections
+###09 : Insert Documents in Collections
 - To Insert any document into Collection
   - Db.<collection-name>.insert({ "name": "Arc Tutorials"})
 - To insert many documents at once into collection
-  - Db.<collection-name>.insertMany(\
-		 { "name": "Arc Tutorials"},\
-		 { "name": "Sai Ram"}\
-	  )\
+  - Db.<collection-name>.insertMany({ "name": "Arc Tutorials"}, { "name": "Sai Ram"})
 
 - Every document that we insert will have a unique key "_id"
   - the value for this key is always unique and 24 character
@@ -149,7 +146,7 @@ decode in diverse languages and ordered fields.
 
 
 
-# 10 : Update Documents in MongoDB
+###10 : Update Documents in MongoDB
 - Update can be applied with
   - update
   - updateOne
@@ -160,11 +157,11 @@ decode in diverse languages and ordered fields.
 	$set: {\
 		"key": "value"\
 	}\
-  )\
+  )
 
 
 
-# 11 : Read Documents From Collection in MongoDB
+###11 : Read Documents From Collection in MongoDB
 - find() - finds all documents in collection
   - db.collection.find()
 - findOne() - find first document in collection
@@ -176,7 +173,7 @@ decode in diverse languages and ordered fields.
 
 
 
-# 12 : Delete Documents From Collection in MongoDB
+###12 : Delete Documents From Collection in MongoDB
 - deleteOne() - finds all documents in collection
   - db.collection.find()
   - Example: db.orders.deleteOne({"_id" : Objectld("563237a41a4d68582c2509da") } );
@@ -187,7 +184,7 @@ decode in diverse languages and ordered fields.
 
 
 
-# 13 : Queries in MongoDB
+###13 : Queries in MongoDB
 - We can use multiple operations inside the Find method
 - Using operations we add more search power to Find method
 - Various conditions that can be used are:
@@ -201,7 +198,7 @@ decode in diverse languages and ordered fields.
 - All conditions "MUST" be satisfied in order to return the document
   - $and - And operation
 	- Match all conditions mentioned in the Find method
-	- E.g db.leads.find { $and: [{}, {} ]})
+	- E.g db.leads.find ({ $and: [{}, {} ]})
   - $or - OR operation
 	- Match any condition in the find method
 
@@ -215,19 +212,19 @@ decode in diverse languages and ordered fields.
 
 
 
-# 14 : Find Specific Fields in MongoDB
+###14 : Find Specific Fields in MongoDB
 - db.leads.find({}, {"city": 1, "_id": 0 })
   - here all the documents that have "city" as a key they will show the city and id will not be shown as it have given 0
 
 - In this method you can only show or hide fields with 1 and 0 but you can not use it togather like some field have 1 to show and some have 0 to not show either you can get the properties with 1 or you can get proprties for 0.
 
 
-# 15 : Projection in MongoDB
+###15 : Projection in MongoDB
 - find is basically projection in mongodb it is uses like you have 100 keys in one document and you need only few of them and all others are not needed then you can do this.
 
 
 
-# 16 : Aggregation in MongoDB
+###16 : Aggregation in MongoDB
 - What is Aggregation in MongoDB?
   - Aggregate is very similar to the find command, where you can provide the criteria for your query in the form of JSON documents
   - The key element in aggregation is called the pipeline
@@ -259,11 +256,11 @@ var pipeline = [\
 	{ $sort: {"leadName": 1} },\
 	{ $limit: 3 }\
 ];\
-db. leads. aggregate(pipeline);\
+db. leads. aggregate(pipeline);
 
 
 
-# 17 : Limit and Skip in MongoDB
+###17 : Limit and Skip in MongoDB
 - We may not always want all documents all the time
   - db.collection.find().limit(4);
 - We may want to skip some documents we don't need
@@ -272,7 +269,7 @@ db. leads. aggregate(pipeline);\
 
 
 
-# 18 : Sorting in MongoDB
+###18 : Sorting in MongoDB
 - We will need to sort the record set before passing it to next logical operation
 - To sort we can use the below command
   - db.collection.find().sort({"leadName": 1 })
@@ -281,7 +278,7 @@ db. leads. aggregate(pipeline);\
 
 
 
-# 19 : Creating Indexes in MongoDB
+###19 : Creating Indexes in MongoDB
 - Indexes are the fastest way to find information
 - Indexes concept is same as that you already would know in SQL
 - By default - every collection will have an Index on "_id" key
@@ -290,7 +287,7 @@ db. leads. aggregate(pipeline);\
 
 
 
-# 20 : Back Up and Recover Data
+###20 : Back Up and Recover Data
 - Steps to create Back up of MongoDB Data
   - Step 1 - First create a folder where you want to save your data
   - Step 2 - Next, Runt the command "mongodump.exe"
@@ -298,7 +295,7 @@ db. leads. aggregate(pipeline);\
 
 
 
-# 21 : Interview Questions
+###21 : Interview Questions
 1. What is MongoDB?
 	- MongoDB is a NoSQL document-oriented database that stores data in JSON-like
 documents with dynamic schemas.
